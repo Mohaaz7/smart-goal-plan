@@ -1,17 +1,10 @@
-import React from "react";
-import GoalItem from "./GoalItem";
+import GoalCard from './GoalCard';
 
-function GoalList({ goals, onUpdateGoal, onDeleteGoal, onDeposit }) {
+function GoalList({ goals, onDelete }) {
   return (
     <div className="goal-list">
       {goals.map((goal) => (
-        <GoalItem
-          key={goal.id}
-          goal={goal}
-          onUpdateGoal={onUpdateGoal}
-          onDeleteGoal={onDeleteGoal}
-          onDeposit={onDeposit}
-        />
+        <GoalCard key={goal.id} goal={goal} onDelete={onDelete} />
       ))}
     </div>
   );
